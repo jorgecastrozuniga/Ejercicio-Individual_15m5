@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/inicio">
+
+    <fragment
+        android:id="@+id/inicio"
+        android:name="com.example.ejercicio_individual_15m5.InicioFragment"
+        android:label="fragment_inicio"
+        tools:layout="@layout/fragment_inicio" >
+        <action
+            android:id="@+id/action_inicio_to_pregunta"
+            app:destination="@id/pregunta" />
+    </fragment>
+    <fragment
+        android:id="@+id/pregunta"
+        android:name="com.example.ejercicio_individual_15m5.PreguntaFragment"
+        android:label="fragment_pregunta"
+        tools:layout="@layout/fragment_pregunta" >
+        <action
+            android:id="@+id/action_pregunta_to_respuestaEquivocada"
+            app:destination="@id/respuestaEquivocada" />
+        <action
+            android:id="@+id/action_pregunta_to_respuestaCorrectaFragment"
+            app:destination="@id/respuestaCorrectaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/respuestaEquivocada"
+        android:name="com.example.ejercicio_individual_15m5.RespuestaEquivocadaFragment"
+        android:label="fragment_respuesta_equivocada"
+        tools:layout="@layout/fragment_respuesta_equivocada" >
+        <action
+            android:id="@+id/action_respuestaEquivocada_to_inicio"
+            app:destination="@id/inicio" />
+    </fragment>
+    <fragment
+        android:id="@+id/respuestaCorrectaFragment"
+        android:name="com.example.ejercicio_individual_15m5.RespuestaCorrectaFragment"
+        android:label="fragment_respuesta_correcta"
+        tools:layout="@layout/fragment_respuesta_correcta" >
+        <action
+            android:id="@+id/action_respuestaCorrectaFragment_to_inicio"
+            app:destination="@id/inicio" />
+    </fragment>
+</navigation>
